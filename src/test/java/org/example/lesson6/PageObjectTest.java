@@ -18,7 +18,7 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-@Story("���������� � �������")
+@Story("?????????? ? ???????")
 @ExtendWith(TestExtension.class)
 public class PageObjectTest {
     WebDriver driver;
@@ -36,8 +36,8 @@ public class PageObjectTest {
     }
     @Test
     @TmsLink("123")
-    @Feature("�������")
-    @DisplayName("�������� ������� � �������")
+    @Feature("???????")
+    @DisplayName("???????? ??????? ? ???????")
     void putTShirtToCartTest() throws InterruptedException {
 //        MainPage mainPage = new MainPage(driver);
 //        mainPage.clickSignInButton();
