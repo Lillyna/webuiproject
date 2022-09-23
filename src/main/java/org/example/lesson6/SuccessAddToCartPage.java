@@ -2,6 +2,7 @@ package org.example.lesson6;
 
 
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,7 @@ public class SuccessAddToCartPage extends BasePage
     @FindBy(xpath = iconOkXpathLocator)
     private WebElement iconOk;
 
+    @Step("Проверить сумму")
     public SuccessAddToCartPage checkTotalSumma(String expectedSumma){
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(iconOkXpathLocator)));
         Assertions.assertEquals(expectedSumma, totalSumma.getText());

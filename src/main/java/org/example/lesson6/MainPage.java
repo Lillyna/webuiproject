@@ -1,6 +1,7 @@
 package org.example.lesson6;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -17,6 +18,7 @@ public class MainPage extends BasePage {
 
     public MainMenuBlock mainMenuBlock;
 
+    @Step("Клик на кнопку login")
     public LoginPage clickSignInButton(){
         signInButton.click();
         return new LoginPage(driver);

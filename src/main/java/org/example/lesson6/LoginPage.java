@@ -1,6 +1,7 @@
 package org.example.lesson6;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -21,6 +22,7 @@ public class LoginPage extends BasePage {
     @FindBy(id = "SubmitLogin")
     private WebElement submitButton;
 
+    @Step("Логин")
     public MainPage login(String login, String password){
         webDriverWait.until(ExpectedConditions.visibilityOf(emailField));
         emailField.sendKeys(login);
