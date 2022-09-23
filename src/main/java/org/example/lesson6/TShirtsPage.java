@@ -1,5 +1,6 @@
 package org.example.lesson6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,7 @@ public class TShirtsPage extends BasePage{
     @FindBy(xpath = "//span[.='Size']/ancestor::div[@class='layered_filter']//a")
     private List<WebElement> sizesList;
 
+    @Step("Выбрать размер")
     public TShirtsPage selectSize(String size){
         sizesList.stream().filter(s-> s.getText().contains(size)).findFirst().get().click();
         return this;
