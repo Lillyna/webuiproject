@@ -1,5 +1,6 @@
 package org.example.homework6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class MainMenuBlock extends BasePage{
     @FindBy(xpath = booksPath)
     private WebElement books;
 
+    @Step("Наводим курсор мыши на кнопку \"Книги\"")
     public BooksExpandListPage hoverBooksButton(){
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(booksPath)));
         actions.moveToElement(books)

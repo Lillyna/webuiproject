@@ -1,5 +1,6 @@
 package org.example.homework6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class BooksPage extends MainPage {
     @FindBy(xpath=fistBookPath)
     private WebElement firstBookInCarusel;
 
+    @Step("Выбираем первую книгу в карусели")
     public BookPage caruselBookClick(){
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(fistBookPath)));
         actions.moveToElement(firstBookInCarusel)

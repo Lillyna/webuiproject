@@ -1,5 +1,6 @@
 package org.example.homework6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +24,7 @@ public class BookPage extends BasePage {
     @FindBy(xpath = makeOrderButtonPath)
     private WebElement makeOrderButton;
 
+    @Step("Добавляем в корзину")
     public BookPage addToCart(){
         actions.moveToElement(addToCartButton)
                 .click()
@@ -31,6 +33,7 @@ public class BookPage extends BasePage {
         return this;
     }
 
+    @Step("Запоминаем цену и делаем заказ")
     public CartPage getPriceAndMakeOrder(){
         CartPage cartPage = new CartPage(driver);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bookPricePath)));
